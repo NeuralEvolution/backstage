@@ -187,17 +187,6 @@ export const UserListPicker = (props: UserListPickerProps) => {
   const loading = loadingOwnedEntities || loadingStarredEntities;
 
   useEffect(() => {
-    if (
-      !loading &&
-      !!selectedUserFilter &&
-      selectedUserFilter !== 'all' &&
-      filterCounts[selectedUserFilter] === 0
-    ) {
-      setSelectedUserFilter('all');
-    }
-  }, [loading, filterCounts, selectedUserFilter, setSelectedUserFilter]);
-
-  useEffect(() => {
     if (!selectedUserFilter) {
       return;
     }
